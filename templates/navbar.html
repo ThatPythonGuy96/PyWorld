@@ -1,0 +1,24 @@
+<header id="header">
+    <a href="{% url 'blog:home' %}" class="logo"><strong>PyWorld</strong></a>
+    <nav id="menu">
+        <ul class="toolbar">
+            <li>
+                <span class="opener">Tags</span>
+                <ul>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Django</a></li>
+                    <li><a href="#">HTML and CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">ReactJS</a></li>
+                </ul>
+            </li>
+            {% if request.user and request.user.is_authenticated and request.user.is_superuser %}
+                <li class="mx-2"><a href="{% url 'blog:create' %}">Create</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <ul class="icons">
+        <li><a href="https://x.com/ThatPythonGuy_" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+    </ul>
+</header>

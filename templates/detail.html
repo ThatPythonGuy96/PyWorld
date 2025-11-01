@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} - {{post.id}}{% endblock title %}
+
+{% block body %}
+	<section>
+		<header class="main">
+			<h1>{{ post.title }}</h1>
+		</header>
+		<span class="image main"><img src="{{ post.thumbnail.url }}" alt="" /></span>
+		{{ post.content|safe }}
+	</section>
+{% endblock %}

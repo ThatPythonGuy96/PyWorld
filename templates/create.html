@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} - Create Blog{% endblock title %}
+
+{% block body %}
+    {{form.errors}}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.media}}
+        {{form.as_p}}
+        <button type='submit'>Post</button>
+    </form>
+{% endblock %}
